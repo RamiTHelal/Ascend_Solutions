@@ -3,6 +3,7 @@
 # Script for Installation: ODOO Saas4/Trunk server on Ubuntu 14.04 LTS
 # Author: AndrÃ© Schenkels, ICTSTUDIO 2014
 # Forked & Modified by: Luke Branch
+# Forked & Modified again by: RamiTalat
 # LibreOffice-Python 2.7 Compatibility Script Author: Holger Brunn (https://gist.github.com/hbrunn/6f4a007a6ff7f75c0f8b)
 #-------------------------------------------------------------------------------
 #  
