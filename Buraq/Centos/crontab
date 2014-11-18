@@ -1,0 +1,1 @@
+@reboot sleep 20;/usr/bin/vmrun start "/vm/Odoo/VM-Name.vmx" nogui 
