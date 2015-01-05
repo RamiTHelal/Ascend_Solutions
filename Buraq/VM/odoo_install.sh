@@ -1,9 +1,9 @@
 #!/bin/bash
 ################################################################################
 # Script for Installation: ODOO Saas4/Trunk server on Ubuntu 14.04 LTS
-# Author: AndrÃ© Schenkels, ICTSTUDIO 2014
+# Author: André Schenkels, ICTSTUDIO 2014
 # Forked & Modified by: Luke Branch
-# Forked & Modified again by: RamiTalat
+
 # LibreOffice-Python 2.7 Compatibility Script Author: Holger Brunn (https://gist.github.com/hbrunn/6f4a007a6ff7f75c0f8b)
 #-------------------------------------------------------------------------------
 #  
@@ -141,7 +141,7 @@ sudo apt-get install python-dev build-essential -y
 sudo pip install --upgrade pip
 sudo pip install --upgrade virtualenv
 echo -e "\n---- Install pyserial and qrcode for compatibility with hw_ modules for peripheral support in Odoo ---"
-sudo pip install pyserial qrcode pytz
+sudo pip install pyserial qrcode pytz jcconv
 sudo apt-get -f install -y
 
 echo -e "\n---- Install pyusb 1.0+ not stable for compatibility with hw_escpos for receipt printer and cash drawer support in Odoo ---"
@@ -180,12 +180,15 @@ echo -e "\n---- Install Wkhtmltopdf 0.12.1 ----"
 # curl -L to follow mirror redirect from sourceforge.net (eg. kaz.sourceforge.net...)
 # sudo wget http://kaz.dl.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb
 # sudo dpkg -i wkhtmltox-0.12.1_linux-trusty-amd64.deb
-# sudo cp /usr/local/bin/wkhtmltopdf /usr/bin
-# sudo cp /usr/local/bin/wkhtmltoimage /usr/bin
+
+
+
+
 sudo wget kaz.dl.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-trusty-i386.deb
 sudo dpkg -i wkhtmltox-0.12.1_linux-trusty-i386.deb
 sudo cp /usr/local/bin/wkhtmltopdf /usr/bin
 sudo cp /usr/local/bin/wkhtmltoimage /usr/bin
+	
 
 echo -e "\n---- Create ODOO system user ----"
 sudo adduser --system --quiet --shell=/bin/bash --home=$OE_HOME --gecos 'ODOO' --group $OE_USER
@@ -384,10 +387,10 @@ echo -e "* cloning design-themes from github.com/odoo/design-themes"
 
 echo -e "* cloning Aeroo_reports repository from github.com/jamotion/aeroo"
 # Clone and setup Jamotion/aeroo.git:
-cd /opt/odoo/custom/addons
-git clone https://github.com/jamotion/aeroo.git
-cd aeroo
-python setup.py install
+# cd /opt/odoo/custom/addons
+# git clone https://github.com/jamotion/aeroo.git
+# cd aeroo
+# python setup.py install
 
 # Download depending modules for Aeroo
 # cd /opt/odoo/custom/addons
