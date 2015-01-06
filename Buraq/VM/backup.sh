@@ -12,11 +12,8 @@
 # Location to place backups.
 backup_dir="/var/backups/postgres_db"
 
-# Create it if not exist
-mkdir -p backup_dir
-
 # Location of the backup logfile.
-logfile="/var/backups/postgres_db/logfile.log"
+logfile="$backup_dir/logfile.log"
 
 
 #String to append to the name of the backup files
