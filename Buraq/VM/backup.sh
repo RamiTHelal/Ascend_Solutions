@@ -11,6 +11,7 @@
 
 # Location to place backups.
 backup_dir="/var/backups/postgres_db"
+
 # Create it if not exist
 mkdir -p backup_dir
 
