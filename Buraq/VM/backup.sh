@@ -21,6 +21,7 @@ backup_date=`date +%Y-%m-%d_%H-%M`
 #Numbers of days you want to keep copie of your databases
 number_of_days=10
 touch $logfile
+timeslot=`date +%d%m%y%H%M%S`
 databases=`psql -l -t | cut -d'|' -f1 | sed -e 's/ //g' -e '/^$/d'`
 for i in $databases; do
   if [ "$i" != "template0" ] && [ "$i" != "template1" ] && [ "$i" != "postgres" ]; then
