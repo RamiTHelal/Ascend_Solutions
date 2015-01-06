@@ -8,15 +8,15 @@
 ############################################################
  
 #!/bin/bash
-# Create the backup dir if not existed
-OB_DIR="/var/backups/postgres_db"
-mkdir -p $OB_DIR
-
-# Location of the backup logfile.
-logfile="$OB_DIR/logfile.log"
 
 # Location to place backups.
-backup_dir="$OB_DIR"
+backup_dir="/var/backups/postgres_db"
+# Create it if not exist
+mkdir -p backup_dir
+
+# Location of the backup logfile.
+logfile="/var/backups/postgres_db/logfile.log"
+
 
 #String to append to the name of the backup files
 backup_date=`date +%Y-%m-%d_%H-%M`
