@@ -1,9 +1,9 @@
 ############################################################
 # Backup-Script /var/lib/postgresql/backup.sh
-#
 # Modified by Rami Talat 06-JAN-2014
 #
-# Should bu run by postgres user
+# ***  assure that the backup_dir is already exist first  ***
+# 
 # Reference: https://www.odoo.com/forum/help-1/question/how-to-setup-a-regular-postgresql-database-backup-4728
 ############################################################
  
@@ -14,7 +14,6 @@ backup_dir="/var/backups/postgres_db"
 
 # Location of the backup logfile.
 logfile="$backup_dir/logfile.log"
-
 
 #String to append to the name of the backup files
 backup_date=`date +%Y-%m-%d_%H-%M`
