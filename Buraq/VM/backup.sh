@@ -22,6 +22,7 @@ backup_date=`date +%Y-%m-%d_%H-%M`
 number_of_days=10
 touch $logfile
 timeslot=`date +%d%m%y%H%M%S`
+echo "---------------------------- Starting the script ----------------------------" >> $logfile
 databases=`psql -l -t | cut -d'|' -f1 | sed -e 's/ //g' -e '/^$/d'`
 for i in $databases; do
   if [ "$i" != "template0" ] && [ "$i" != "template1" ] && [ "$i" != "postgres" ]; then
@@ -30,7 +31,6 @@ for i in $databases; do
     # pg_dump $i|gzip > $backupfile
 	
     timeinfo=`date '+%T %x'`
-    echo "-------------------------------------------------------------------------------" >> $logfile
     echo "Backup and Vacuum started at $timeinfo for time slot $timeslot on database: $i " >> $logfile
     /usr/bin/vacuumdb -z -U postgres $i >/dev/null 2>&1
     # /usr/bin/pg_dump $i -U postgres | gzip > "$backup_dir/openerp-$i-$timeslot-database.gz"
