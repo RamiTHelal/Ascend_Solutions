@@ -14,3 +14,4 @@ backup_dir="/var/backups/postgres_db"
 
 sudo mkdir $backup_dir
 sudo chown postgres $backup_dir
+chmod +x /var/lib/postgresql/backup.sh
