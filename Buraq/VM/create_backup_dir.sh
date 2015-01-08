@@ -4,7 +4,6 @@
 #
 # ***  assure that the backup_dir is already exist first  ***
 # 
-# Reference: https://www.odoo.com/forum/help-1/question/how-to-setup-a-regular-postgresql-database-backup-4728
 ############################################################
  
 #!/bin/bash
