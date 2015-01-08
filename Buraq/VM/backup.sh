@@ -30,6 +30,7 @@ for i in $databases; do
     # pg_dump $i|gzip > $backupfile
 	
     timeinfo=`date '+%T %x'`
+    echo "-------------------------------------------------------------------------------" >> $logfile
     echo "Backup and Vacuum started at $timeinfo for time slot $timeslot on database: $i " >> $logfile
     /usr/bin/vacuumdb -z -U postgres $i >/dev/null 2>&1
     # /usr/bin/pg_dump $i -U postgres | gzip > "$backup_dir/openerp-$i-$timeslot-database.gz"
