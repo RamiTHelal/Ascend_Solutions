@@ -20,8 +20,7 @@ sudo chown postgres backup.sh
 sudo chmod +x backup.sh
 
 # modifying postgres crontab 
-sudo su postgres
-crontab -l | { cat; echo "45 */4 * * * /var/lib/postgresql/backup.sh > /dev/null 2>&1"; } | crontab -
+sudo su - postgres -c "crontab -l | { cat; echo "45 */4 * * * /var/lib/postgresql/backup.sh > /dev/null 2>&1"; } | crontab - " 2> /dev/null || true
 exit
 # return back to your current dir
 cd -
