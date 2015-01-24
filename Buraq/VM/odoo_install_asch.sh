@@ -9,8 +9,8 @@
 # clean Ubuntu 14.04 Server
 #-------------------------------------------------------------------------------
 # USAGE:
-#
-# odoo-install
+# chmod +x odoo_install_asch.sh
+# ./odoo_install_asch.sh 2>&1 | tee odoo_installation.log
 #
 # EXAMPLE:
 # ./odoo-install
