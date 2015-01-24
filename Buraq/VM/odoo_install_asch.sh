@@ -10,7 +10,7 @@
 #-------------------------------------------------------------------------------
 # USAGE:
 # chmod +x odoo_install_asch.sh
-# ./odoo_install_asch.sh 2>&1 | tee odoo_installation.log
+# sudo ./odoo_install_asch.sh 2>&1 | tee odoo_installation.log
 #
 # EXAMPLE:
 # ./odoo-install
