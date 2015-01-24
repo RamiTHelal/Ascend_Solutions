@@ -158,4 +158,8 @@ sudo chmod 755 /etc/init.d/$OE_CONFIG
 sudo chown root: /etc/init.d/$OE_CONFIG
 echo -e "* Start ODOO on Startup"
 sudo update-rc.d $OE_CONFIG defaults
+
+# Extesion to odoo_install.sh script_ext.sh
+sudo apt-get install pgadmin3 -y
+
 echo "Done! The ODOO server can be started with /etc/init.d/$OE_CONFIG"
