@@ -162,4 +162,13 @@ sudo update-rc.d $OE_CONFIG defaults
 # Extesion to odoo_install.sh script_ext.sh
 sudo apt-get install pgadmin3 -y
 
+# Get github.com/mohamedhagag/dvit-odoo8 modules
+# Thanks to Mohamed Hagag for his great work
+cd $OE_HOME/custom/addons
+sudo su $OE_USER -c "wget https://github.com/mohamedhagag/dvit-odoo8/tree/master/report_rtl"
+sudo su $OE_USER -c "wget https://github.com/mohamedhagag/dvit-odoo8/tree/master/web-lang"
+sudo su $OE_USER -c "wget https://github.com/mohamedhagag/dvit-odoo8/tree/master/sale_discount"
+sudo su $OE_USER -c "wget https://github.com/mohamedhagag/dvit-odoo8/tree/master/invoice_discount"
+sudo su $OE_USER -c "wget https://github.com/mohamedhagag/dvit-odoo8/tree/master/autohide_leftbar"
+
 echo "Done! The ODOO server can be started with /etc/init.d/$OE_CONFIG"
