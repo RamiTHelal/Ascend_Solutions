@@ -162,6 +162,12 @@ sudo update-rc.d $OE_CONFIG defaults
 # Extesion to odoo_install.sh script_ext.sh
 sudo apt-get install pgadmin3 -y
 
+# Resolve the wkhtmltopdf problems
+sudo wget http://jaist.dl.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.2.1_linux-trusty-i386.deb
+sudo dpkg -i wkhtmltox-0.12.2.1_linux-trusty-i386.deb
+sudo cp /usr/local/bin/wkhtmltopdf /usr/bin
+sudo cp /usr/local/bin/wkhtmltoimage /usr/bin
+
 # Get github.com/mohamedhagag/dvit-odoo8 modules
 # Thanks to Mohamed Hagag for his great work
 cd $OE_HOME/custom/addons
