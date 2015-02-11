@@ -47,7 +47,7 @@ sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
 echo -e "\n---- Install tool packages ----"
 sudo apt-get install wget subversion git bzr bzrtools python-pip -y
 echo -e "\n---- Install python packages ----"
-sudo apt-get install python-dateutil python-feedparser python-ldap python-libxslt1 python-lxml python-mako python-openid python-psycopg2 python-pybabel python-pychart python-pydot python-pyparsing python-reportlab python-simplejson python-tz python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-yaml python-zsi python-docutils python-psutil python-mock python-unittest2 python-jinja2 python-pypdf python-decorator python-requests python-passlib python-pil wkhtmltopdf -y
+sudo apt-get install python-dateutil python-feedparser python-ldap python-libxslt1 python-lxml python-mako python-openid python-psycopg2 python-pybabel python-pychart python-pydot python-pyparsing python-reportlab python-simplejson python-tz python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-yaml python-zsi python-docutils python-psutil python-mock python-unittest2 python-jinja2 python-pypdf python-decorator python-requests python-passlib python-pil -y
 echo -e "\n---- Install python libraries ----"
 sudo pip install gdata
 echo -e "\n---- Create ODOO system user ----"
@@ -158,6 +158,7 @@ sudo chmod 755 /etc/init.d/$OE_CONFIG
 sudo chown root: /etc/init.d/$OE_CONFIG
 echo -e "* Start ODOO on Startup"
 sudo update-rc.d $OE_CONFIG defaults
+sudo service $OE_CONFIG start
 
 # Extesion to odoo_install.sh script_ext.sh
 sudo apt-get install pgadmin3 -y
@@ -176,5 +177,4 @@ sudo su $OE_USER -c "wget https://github.com/mohamedhagag/dvit-odoo8/tree/master
 sudo su $OE_USER -c "wget https://github.com/mohamedhagag/dvit-odoo8/tree/master/sale_discount"
 sudo su $OE_USER -c "wget https://github.com/mohamedhagag/dvit-odoo8/tree/master/invoice_discount"
 sudo su $OE_USER -c "wget https://github.com/mohamedhagag/dvit-odoo8/tree/master/autohide_leftbar"
-
 echo "Done! The ODOO server can be started with /etc/init.d/$OE_CONFIG"
