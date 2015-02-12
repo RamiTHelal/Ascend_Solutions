@@ -7,9 +7,6 @@
 ##fixed parameters
 #openerp
 OE_USER="odoo"
-OE_CUSTOM_HOME="/opt/$OE_USER/custom/addons"
-
-cd $OE_CUSTOM_HOME
 
 # Getting zip repos...
 sudo su $OE_USER -c "wget https://github.com/mohamedhagag/dvit-odoo8/archive/master.zip"
