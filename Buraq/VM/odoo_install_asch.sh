@@ -160,21 +160,27 @@ echo -e "* Start ODOO on Startup"
 sudo update-rc.d $OE_CONFIG defaults
 sudo service $OE_CONFIG start
 
-# Extesion to odoo_install.sh script_ext.sh
-sudo apt-get install pgadmin3 -y
-
 # Resolve the wkhtmltopdf problems
 sudo wget http://jaist.dl.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.2.1_linux-trusty-i386.deb
 sudo dpkg -i wkhtmltox-0.12.2.1_linux-trusty-i386.deb
 sudo cp /usr/local/bin/wkhtmltopdf /usr/bin
 sudo cp /usr/local/bin/wkhtmltoimage /usr/bin
 
+#--------------------------------------------------
+# Extra addons for me...
+#--------------------------------------------------
+# Change Odoo passwd
+sudo usermod -p $(echo odoo | openssl passwd -1 -stdin) odoo
+
+# Extesion to odoo_install.sh script_ext.sh
+sudo apt-get install pgadmin3 -y
+
+# Install openssh-server
+sudo apt-get install openssh-server -y
+
 # Get github.com/mohamedhagag/dvit-odoo8 modules
 # Thanks to Mohamed Hagag for his great work
 cd $OE_HOME/custom/addons
-sudo su $OE_USER -c "wget https://github.com/mohamedhagag/dvit-odoo8/tree/master/report_rtl"
-sudo su $OE_USER -c "wget https://github.com/mohamedhagag/dvit-odoo8/tree/master/web-lang"
-sudo su $OE_USER -c "wget https://github.com/mohamedhagag/dvit-odoo8/tree/master/sale_discount"
-sudo su $OE_USER -c "wget https://github.com/mohamedhagag/dvit-odoo8/tree/master/invoice_discount"
-sudo su $OE_USER -c "wget https://github.com/mohamedhagag/dvit-odoo8/tree/master/autohide_leftbar"
+sudo sh extra_apps.sh
+
 echo "Done! The ODOO server can be started with /etc/init.d/$OE_CONFIG"
