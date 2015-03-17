@@ -31,7 +31,7 @@ sudo chown postgres $backup_dir
 
 # create the backup script ...
 sudo su - postgres -c "wget https://raw.githubusercontent.com/ramitalat/Ascend_Solutions/master/Buraq/VM/backup.sh"
-sudo chmod +x backup.sh
+sudo chmod +x /var/lib/postgresql/backup.sh
 
 # modifying postgres crontab
 sudo su - postgres -c "crontab -l | { cat; echo \"45 */12 * * * /var/lib/postgresql/backup.sh > /dev/null 2>&1\"; } | crontab -"
