@@ -34,7 +34,7 @@ sudo su - postgres -c "wget https://raw.githubusercontent.com/ramitalat/Ascend_S
 sudo chmod +x backup.sh
 
 # modifying postgres crontab
-sudo su - postgres -c "crontab -l | { cat; echo \"45 */4 * * * /var/lib/postgresql/backup.sh > /dev/null 2>&1\"; } | crontab -"
+sudo su - postgres -c "crontab -l | { cat; echo \"45 */12 * * * /var/lib/postgresql/backup.sh > /dev/null 2>&1\"; } | crontab -"
 
 # return back to your current dir
 cd -
