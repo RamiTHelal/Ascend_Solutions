@@ -9,14 +9,11 @@
 OE_USER="odoo"
 
 # Getting zip repos...
-sudo su $OE_USER -c "wget https://github.com/mohamedhagag/dvit-odoo8/archive/master.zip"
-sudo su $OE_USER -c "mv master.zip rami_1.zip"
+sudo su $OE_USER -c "wget -O rami_1.zip https://github.com/mohamedhagag/dvit-odoo8/archive/master.zip"
 
-sudo su $OE_USER -c "wget https://github.com/codup/odoo-eam/archive/master.zip"
-sudo su $OE_USER -c "mv master.zip rami_2.zip"
+sudo su $OE_USER -c "wget -O rami_2.zip https://github.com/codup/odoo-eam/archive/master.zip"
 
-sudo su $OE_USER -c "wget https://github.com/OCA/account-financial-reporting/archive/8.0.zip"
-sudo su odoo -c "mv 8.0.zip rami_3.zip"
+sudo su $OE_USER -c "wget -O rami_3.zip https://github.com/OCA/account-financial-reporting/archive/8.0.zip"
 
 # Unzip all
 sudo su $OE_USER -c "find . -name 'rami_*.zip' -print0 | xargs -0 -I {} -P 10 unzip {}"
