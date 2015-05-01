@@ -182,10 +182,4 @@ sudo apt-get install openssh-server -y
 wget https://raw.githubusercontent.com/ramitalat/Ascend_Solutions/master/Buraq/VM/wkhtml_fix.sh
 sudo sh wkhtml_fix.sh
 
-# Get github.com/mohamedhagag/dvit-odoo8 modules
-# Thanks to Mohamed Hagag for his great work
-cd $OE_HOME/custom/addons
-wget https://raw.githubusercontent.com/ramitalat/Ascend_Solutions/master/Buraq/VM/extra_apps.sh
-sudo sh extra_apps.sh
-
 echo "Done! The ODOO server can be started with /etc/init.d/$OE_CONFIG"
