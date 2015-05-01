@@ -13,19 +13,32 @@
 ################################################################################
 
 # Get the odoo_install script
+#--------------------------------------------------
+# Installing Odoo script
+#--------------------------------------------------
+echo -e "\n---- Installing Odoo script ----"
+
 wget https://raw.githubusercontent.com/ramitalat/Ascend_Solutions/master/Buraq/VM/odoo_install_asch.sh
 
 chmod +x odoo_install_asch.sh 
 sudo ./odoo_install_asch.sh 2>&1 | tee odoo_installation.log
 
-# Get the backup script
+#--------------------------------------------------
+# Installing the extra_apps script
+#--------------------------------------------------
+echo -e "\n---- Installing the extra_apps script ----"
+cd $OE_HOME/custom/addons
+wget https://raw.githubusercontent.com/ramitalat/Ascend_Solutions/master/Buraq/VM/extra_apps.sh
+sudo sh extra_apps.sh
+
+#--------------------------------------------------
+# Installing the backup script
+#--------------------------------------------------
+echo -e "\n---- Installing the backup script ----"
 
 # Location to place backups.
 backup_dir="/var/backups/postgres_db"
 
-# run the extention sript to odoo_install.sh
-wget https://raw.githubusercontent.com/ramitalat/Ascend_Solutions/master/Buraq/VM/script_ext.sh
-sudo sh script_ext.sh
 sudo mkdir $backup_dir
 sudo chown postgres $backup_dir
 
