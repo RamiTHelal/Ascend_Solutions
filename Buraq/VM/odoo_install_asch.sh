@@ -2,6 +2,7 @@
 ################################################################################
 # Script for Installation: ODOO Saas4/Trunk server on Ubuntu 14.04 LTS
 # Author: André Schenkels, ICTSTUDIO 2014
+# https://raw.githubusercontent.com/aschenkels-ictstudio/odoo-install-scripts/master/ubuntu-14-04/odoo_install.sh
 # Forked & Modified by: Rami Talat
 #-------------------------------------------------------------------------------
 #
